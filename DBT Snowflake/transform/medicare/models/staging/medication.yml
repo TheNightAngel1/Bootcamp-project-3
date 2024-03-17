@@ -1,0 +1,10 @@
+models:
+  - name: medication
+    columns:
+      - name: brand_name
+        tests:
+          - unique
+          - not_null
+      - name: generic_name
+        tests:
+          - not_null

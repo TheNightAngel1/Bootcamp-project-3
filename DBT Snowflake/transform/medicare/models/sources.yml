@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: medicare
+    database: medicare
+    schema: raw
+    tables:
+      - name: med2021
+      

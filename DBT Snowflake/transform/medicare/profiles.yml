@@ -1,0 +1,15 @@
+medicare:
+  target: dev 
+  outputs:
+    dev:
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT_ID') }}"
+      database: medicare      
+      user: '{{ env_var("SNOWFLAKE_USERNAME") }}'
+      password: '{{ env_var("SNOWFLAKE_PASSWORD") }}'
+      role: accountadmin
+      schema: raw
+      threads: 12
+      type: snowflake
+      warehouse: xsmall_wh
+      lient_session_keep_alive: False
+      

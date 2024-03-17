@@ -1,0 +1,13 @@
+models:
+  - name: location
+    columns:
+      - name: prscrbr_geo_cd
+        tests:
+          - unique
+      - name: geography_level
+        tests:
+          - not_null
+      - name: prscrbr_geo_desc
+        tests:
+          - unique
+          - not_null
