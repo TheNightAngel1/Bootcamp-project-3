@@ -1,0 +1,5 @@
+models:
+  - name: claims
+    columns:
+      - name: brand_name
+      - name: prscrbr_geo_cd

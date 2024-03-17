@@ -2,7 +2,7 @@
 
 {{
     config(
-        materialized="incremental",
+        materialized="table",
         unique_key=["prscrbr_geo_cd"],
         incremental_strategy="delete+insert"
     )
@@ -11,7 +11,7 @@
 select 
     distinct
         Prscrbr_Geo_Lvl as geography_level,
-        Prscrbr_Geo_Cd as prscrbr_geo_cd,
+        coalesce(Prscrbr_Geo_Cd,'0') as prscrbr_geo_cd,
         Prscrbr_Geo_Desc as prscrbr_geo_desc,
         cast(_airbyte_extracted_at as datetime) as last_update
 
