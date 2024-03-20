@@ -1,0 +1,25 @@
+models:
+  - name: dim_opiods
+    description: |-
+      This table provides a summary list of all drugs classified as either short term or long term opiods
+    columns:
+
+      - name: brand_name
+        description: Brand name of drug
+        tests:
+          - not_null
+
+      - name: generic_name
+        description: Generic name of drug
+        tests:
+          - not_null
+
+      - name: opioid_drug_flag
+        description: Flags the medicine as a short acting opiod
+        tests:
+          - not_null
+
+      - name: la_opiod_drug_flag
+        description: Flags the medicine as a long acting opiod
+        tests:
+          - not_null

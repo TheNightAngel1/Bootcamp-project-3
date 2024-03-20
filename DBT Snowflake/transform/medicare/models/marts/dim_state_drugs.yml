@@ -1,0 +1,40 @@
+models:
+  - name: dim_state_drugs
+    description: |-
+      This table provides a summary list of all medicare drug offerings per state
+    columns:
+
+      - name: prscrbr_geo_desc
+        description: Geographic location code
+        tests:
+          - not_null
+
+      - name: brand_name
+        description: Brand Name of the drug
+        tests:
+          - not_null
+
+      - name: generic_name
+        description: Generic name of the drug
+        tests:
+          - not_null
+
+      - name: opioid_drug_flag
+        description: Flags the medicine as a short acting opiod
+        tests:
+          - not_null
+
+      - name: la_opiod_drug_flag
+        description: Flags the medicine as a long acting opiod
+        tests:
+          - not_null
+
+      - name: antibiotic_flag
+        description: Flags the medicine as an antibiotic
+        tests:
+          - not_null
+
+      - name: antipsychotic_flag
+        description: Flags the medicine as an antipsychotic
+        tests:
+          - not_null

@@ -1,5 +1,5 @@
 models:
-  - name: claims
+  - name: claim
     columns:
       - name: brand_name
         tests: 
