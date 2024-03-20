@@ -5,7 +5,7 @@ models:
     columns:
 
       - name: prscrbr_geo_desc
-        description: Geographic location code
+        description: Geographic location descr
         tests:
           - not_null
 

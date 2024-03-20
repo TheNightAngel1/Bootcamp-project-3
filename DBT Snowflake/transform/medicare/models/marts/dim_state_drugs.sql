@@ -2,8 +2,8 @@
 
 {{
     config(
-        materialized="incremental",
-        unique_key=["brand_name", "prscrbr_geo_cd", ],
+        materialized="table",
+        unique_key=["brand_name", "prscrbr_geo_desc" ],
         incremental_strategy="delete+insert"
     )
 }}
@@ -20,4 +20,4 @@ select
 from {{ ref('claims') }} as c
 join {{ ref('location') }} as l on c.prscrbr_geo_cd = l.prscrbr_geo_cd
 join {{ ref('medication') }} as m on m.brand_name = c.brand_name 
-order by l.prscrbr_geo_cd, brand_name
+order by l.prscrbr_geo_cd, c.brand_name

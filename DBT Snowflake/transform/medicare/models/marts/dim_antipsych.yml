@@ -1,0 +1,20 @@
+models:
+  - name: dim_antipsych
+    description: |-
+      This table provides a summary list of all drugs classified as Antipsychotic
+    columns:
+
+      - name: brand_name
+        description: Brand name of drug
+        tests:
+          - not_null
+
+      - name: generic_name
+        description: Generic name of drug
+        tests:
+          - not_null
+
+      - name: antipsychotic_flag
+        description: Flags the medicine as an antipsychotic
+        tests:
+          - not_null
