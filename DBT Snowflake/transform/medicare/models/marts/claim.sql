@@ -2,7 +2,7 @@
 
 {{
     config(
-        materialized="incremental",
+        materialized="table",
         unique_key=["brand_name", "prscrbr_geo_cd", ],
         incremental_strategy="delete+insert"
     )

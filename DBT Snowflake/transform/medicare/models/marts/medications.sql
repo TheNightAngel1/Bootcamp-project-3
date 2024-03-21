@@ -1,4 +1,4 @@
--- incremental approach with delete + insert
+-- table approach with delete + insert
 
 {{
     config(
