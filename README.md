@@ -11,7 +11,7 @@
 
 ## Introduction 
 
-This is a demo project to create an ELT pipeline using airbyte, dbt, snowflake and dagster. 
+This project is designed to pull medicare prescription data across all US states. 
 
 ![docs/elt-architecture.png](docs/elt-architecture.png)
 
