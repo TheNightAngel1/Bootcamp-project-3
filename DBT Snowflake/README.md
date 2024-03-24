@@ -1,4 +1,4 @@
-# Modern ELT demo 
+# Medicare Prescription Data ELT
 
 <img src="docs/dec-logo.png" width="250" height="250">
 
