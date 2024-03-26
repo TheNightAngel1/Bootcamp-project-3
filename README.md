@@ -3,6 +3,21 @@
 
 <img src="docs/dec-logo.png" width="250" height="250">
 
+## Project Context 
+
+This project puts you in the shoes of a Solutions Engineering Consultant who has been tapped into to help a company 
+
+### Goals
+1. Business solutions relating to Medicare prescription claims volume and potential revenue by state
+2. This data pipeline would be valuable to businesses looking to expand medicare approaved pharmacy services or other medicare covered services. This data can be used to locate higer volumes of medicare needs by population across the US
+
+This ELT pipeline uses airbyte, dbt, snowflake and AWS. The architecture diagram below outlines how the ELT pipeline works:
+1. A source SQL file is loaded into PostgreSQL
+2. Airbyte will extract the data from PostgreSQL and load it into Snowflake
+3. DBT will take the raw data from Snowflake and transform it 
+4. Using Power BI, we will then take that transformed data and create a semantic layer & visualizations
+5. Docker is used to build an image of the solution and AWS will deploy the solution
+
 
 ![airbyte](https://img.shields.io/badge/airbyte-integrate-blue)
 ![dbt](https://img.shields.io/badge/dbt-transform-blue)
@@ -49,10 +64,10 @@ Accompanying presentation [here](https://bit.ly/dataengineercamp-modern-elt-demo
 
 ## Using airbyte 
 
-1. Create a source for the postgresql database `dvdrental`
+1. Create a source for the postgresql database `medicare`
     - host: `host.docker.internal`
 2. Create a destination for the Snowflake database 
-3. Create a connection between `dvdrental` and `snowflake` 
+3. Create a connection between `medicare` and `snowflake` 
     - Namespace Custom Format: `<your_destination_schema>`
 4. Run the sync job 
 
@@ -60,9 +75,9 @@ Accompanying presentation [here](https://bit.ly/dataengineercamp-modern-elt-demo
 
 1. Log in to your snowflake account 
 2. Go to `worksheets` > `+ worksheet` 
-3. On the top right, select the role `ACCOUNTADMIN.AIRBYTE_WAREHOUSE`. 
+3. Query one of the synced tables from airbyte in the raw schema e.g. `select * from medicare.raw.med2021` 
 4. On the top left of the worksheet, select `AIRBYTE_DATABASE.AIRBYTE_SCHEMA` 
-5. Query one of the synced tables from airbyte e.g. `select * from customer` 
+5. Query one of the synced tables from airbyte e.g. `select * from med2021` 
 
 ## Using dbt 
 
